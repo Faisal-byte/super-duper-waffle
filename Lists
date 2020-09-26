@@ -1,0 +1,23 @@
+# first input determines how many times the loop should be executed
+N = int(input())
+
+# loops N amount of times and do the command qwer to the list arr
+arr = []
+for i in range(N):
+    inp = input()
+    qwer = inp.split()
+
+    if qwer[0] == 'insert':
+        arr.insert(int(qwer[1]), int(qwer[2]))
+    elif qwer[0] == 'print':
+        print(arr)
+    elif qwer[0] == 'remove':
+        arr.remove(int(qwer[1]))
+    elif qwer[0] == 'append':
+        arr.append(int(qwer[1]))
+    elif qwer[0] == 'sort':
+        arr.sort()
+    elif qwer[0] == 'pop':
+        arr.pop()
+    elif qwer[0] == 'reverse':
+        arr.reverse()
