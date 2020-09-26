@@ -1,0 +1,40 @@
+# Faisal Mashhadi
+
+string = input()
+
+def sortString(string):
+    # sorts string into sortedList
+    sortedList = sorted(string)
+
+    # Initialize
+    lowerCase = []
+    upperCase = []
+    oddInt = []
+    evenInt = []
+    ans = []
+
+    # loops through all char in sortedList
+    # and appends each char into its correct category
+    for char in sortedList:
+        if 96 < ord(char) < 123:
+            lowerCase.append(char)
+        elif 64 < ord(char) < 91:
+            upperCase.append(char)
+        elif not char.isalpha():
+            if int(char) % 2 == 1:
+                oddInt.append(char)
+            elif int(char) % 2 == 0:
+                evenInt.append(char)
+    
+    # adds each category in order of the question and saved it to ans
+    ans = lowerCase + upperCase + oddInt + evenInt
+    ansStr = ''
+    
+    # converts ans into a string
+    for i in range(len(ans)):
+        ansStr += str(ans[i])
+    
+    # return the string ans
+    return ansStr
+
+print(sortString(string))
